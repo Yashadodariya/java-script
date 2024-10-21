@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="./submit.html" onsubmit="return submitdata()">
+      <input type="name" placeholder="name" id="name" />
+      <input type="number" placeholder="number" id="num" />
+      <input type="password" placeholder="password" id="pass" />
+      <input type="password" placeholder="confirm" id="con" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+
+<script>
+    function submitdata(){
+        let a = document.getElementById("name").value
+        let b = document.getElementById("num").value
+        let c = document.getElementById("pass").value
+        let d = document.getElementById("con").value
+
+        if (a && b && c && d) {
+            if (a=="") {
+                alert("enter your name")
+                return false
+            }
+            if (b.length!=10) {
+                alert("enter a valid number")
+                return false
+            }
+            if (c.length!=6 && d.length!=10) {
+                alert("enter a valid password")
+                return false
+            }
+            if (c!=d) {
+                alert("confirm password are not same ")
+                return false
+            }
+            return true
+        } 
+        else {
+            alert("please enter a details")
+            return false
+        }
+    }
+</script>

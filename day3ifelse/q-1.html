@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Check</title>
+</head>
+<body>
+    <h1>Temperature Check</h1>
+    <label for="temperature">Enter temperature in Celsius:</label>
+    <input type="number" id="temperature" placeholder="Enter temperature">
+    <button onclick="checkTemperature()">Check</button>
+
+    <p id="message"></p>
+
+    <script>
+        function checkTemperature() {
+            let temp = document.getElementById('temperature').value;
+            let message = "";
+
+            if (temp < 0) {
+                message = "It's freezing cold!";
+            } else if (temp >= 0 && temp <= 10) {
+                message = "It's chilly.";
+            } else if (temp >= 11 && temp <= 20) {
+                message = "It's cool.";
+            } else if (temp > 20) {
+                message = "It's warm!";
+            }
+
+            document.getElementById('message').innerHTML = message;
+        }
+    </script>
+</body>
+</html>
